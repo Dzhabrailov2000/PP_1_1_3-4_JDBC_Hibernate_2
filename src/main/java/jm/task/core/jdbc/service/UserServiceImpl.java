@@ -7,40 +7,33 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-//    UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
     UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
 
 
-    public UserServiceImpl() throws SQLException {
+    public UserServiceImpl() {
     }
 
-    public void createUsersTable() throws SQLException {
-//        userDaoJDBC.createUsersTable();
+    public void createUsersTable() {
         userDaoHibernate.createUsersTable();
     }
 
-    public void dropUsersTable() throws SQLException {
+    public void dropUsersTable() {
         userDaoHibernate.dropUsersTable();
-//        userDaoJDBC.dropUsersTable();
     }
 
-    public void saveUser(String name, String lastName, byte age) throws SQLException {
+    public void saveUser(String name, String lastName, byte age) {
         userDaoHibernate.saveUser(name, lastName, age);
-//        userDaoJDBC.saveUser(name, lastName, age);
     }
 
-    public void removeUserById(long id) throws SQLException {
+    public void removeUserById(long id) {
         userDaoHibernate.removeUserById(id);
-//        userDaoJDBC.removeUserById(id);
     }
 
     public List<User> getAllUsers() {
         return userDaoHibernate.getAllUsers();
-//        return userDaoJDBC.getAllUsers();
     }
 
-    public void cleanUsersTable() throws SQLException {
+    public void cleanUsersTable() {
         userDaoHibernate.cleanUsersTable();
-//        userDaoJDBC.cleanUsersTable();
     }
 }
